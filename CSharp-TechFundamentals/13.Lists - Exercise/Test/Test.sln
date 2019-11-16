@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test.csproj", "{D4522AAC-9E72-4E84-BFD9-F44EEB3F49A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_Santa_s_List", "..\_Santa_s_List\_Santa_s_List.csproj", "{BC0587DF-2AAE-4F10-BE1D-B4DB580ABAC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test 22", "..\test 22\test 22.csproj", "{0B7F2582-3F31-44BF-B22D-A75EAEA8FF89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4522AAC-9E72-4E84-BFD9-F44EEB3F49A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4522AAC-9E72-4E84-BFD9-F44EEB3F49A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4522AAC-9E72-4E84-BFD9-F44EEB3F49A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4522AAC-9E72-4E84-BFD9-F44EEB3F49A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0587DF-2AAE-4F10-BE1D-B4DB580ABAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0587DF-2AAE-4F10-BE1D-B4DB580ABAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0587DF-2AAE-4F10-BE1D-B4DB580ABAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0587DF-2AAE-4F10-BE1D-B4DB580ABAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7F2582-3F31-44BF-B22D-A75EAEA8FF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7F2582-3F31-44BF-B22D-A75EAEA8FF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7F2582-3F31-44BF-B22D-A75EAEA8FF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7F2582-3F31-44BF-B22D-A75EAEA8FF89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5B9157E-D8F7-4069-A49F-A10EAB57A763}
+	EndGlobalSection
+EndGlobal
