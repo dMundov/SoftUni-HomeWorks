@@ -9,9 +9,7 @@ namespace _6_.Hot_Potato
     {
         static void Main(string[] args)
         {
-#if DEBUG
-            Console.SetIn(new StreamReader(@"C:\Users\dMundov\Desktop\input.txt"));
-#endif
+
 
 
             string[] names = Console.ReadLine()

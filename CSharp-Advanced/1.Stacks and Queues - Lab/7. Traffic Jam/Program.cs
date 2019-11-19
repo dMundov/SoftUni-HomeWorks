@@ -8,9 +8,7 @@ namespace _7._Traffic_Jam
     {
         static void Main(string[] args)
         {
-#if DEBUG
-            Console.SetIn(new StreamReader(@"C:\Users\dMundov\Desktop\input.txt"));
-#endif
+
 
             int carsNumber = int.Parse(Console.ReadLine());
             Queue<string> cars = new Queue<string>();

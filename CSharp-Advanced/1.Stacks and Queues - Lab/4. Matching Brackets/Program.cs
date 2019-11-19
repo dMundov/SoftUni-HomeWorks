@@ -8,9 +8,7 @@ namespace _4._Matching_Brackets
     {
         static void Main(string[] args)
         {
-#if DEBUG
-            Console.SetIn(new StreamReader(@"C:\Users\dMundov\Desktop\input.txt"));
-#endif
+
             string input = Console.ReadLine();
                 
             Stack<int> ourStack = new Stack<int>();

@@ -9,9 +9,7 @@ namespace _5.Supermarket
     {
         static void Main(string[] args)
         {
-#if DEBUG
-            Console.SetIn(new StreamReader(@"C:\Users\dMundov\Desktop\input.txt"));
-#endif
+
             Queue<string> customers = new Queue<string>();
 
             while(true)

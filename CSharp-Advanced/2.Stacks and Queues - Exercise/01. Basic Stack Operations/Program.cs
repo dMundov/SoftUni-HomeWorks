@@ -9,9 +9,7 @@ namespace _01._Basic_Stack_Operations
     {
         static void Main(string[] args)
         {
-#if DEBUG
-            Console.SetIn(new StreamReader(@"C:\Users\dMundov\Desktop\input.txt"));
-#endif
+
             int[] comandsNums = Console.ReadLine()
                 .Split(" ")
                 .Select(int.Parse)
