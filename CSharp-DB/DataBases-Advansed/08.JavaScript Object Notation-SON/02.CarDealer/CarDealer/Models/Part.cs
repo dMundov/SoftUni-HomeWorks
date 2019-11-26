@@ -18,5 +18,10 @@ namespace CarDealer.Models
         public Supplier Supplier { get; set; }
 
         public ICollection<PartCar> PartCars { get; set; }
+
+        internal object Where(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

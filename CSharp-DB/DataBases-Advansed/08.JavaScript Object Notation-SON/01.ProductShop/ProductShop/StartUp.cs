@@ -17,36 +17,74 @@ namespace ProductShop
 
             var context = new ProductShopContext();
 
-            Console.WriteLine( GetProductsInRange(context));
-
+            Console.WriteLine(GetUsersWithProducts(context));
 
 
         }
 
-        public static string GetProductsInRange(ProductShopContext context)
+
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
         {
 
-            var needProducts = context
-                .Products
-                .Where(p => p.Price >= 500
-                && p.Price <= 1000)
-                .Select(p =>
-                new ProductDto
+            var categories = context
+                .Categories
+                .Select(c => new
                 {
-                    Name = p.Name,
-                    Price = p.Price,
-                    SellerName = $"{p.Seller.FirstName} {p.Seller.LastName}"
+                    category = c.Name,
+                    productsCount = c.CategoryProducts.Count,
+                    averagePrice = $"{c.CategoryProducts.Average(p => p.Product.Price):F2}",
+                    totalRevenue = $"{c.CategoryProducts.Sum(p => p.Product.Price):F2}"
                 })
-                .OrderBy(p => p.Price)
+                .OrderByDescending(p => p.productsCount)
                 .ToList();
 
-            var getProductsJson = JsonConvert.SerializeObject(needProducts, Formatting.Indented);
-            return getProductsJson;
+            var jsonCategories = JsonConvert.SerializeObject(categories, Formatting.Indented);
+            return jsonCategories;
         }
 
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+
+            var users = context
+                .Users
+                .Where(u => u.ProductsSold.Any((ps => ps.Buyer != null)))
+                .OrderByDescending(u => u.ProductsSold.Count(ps => ps.Buyer != null))
+                .Select(u => new
+                {
+                    firstName = u.FirstName,
+                    lastName = u.LastName,
+                    age = u.Age,
+                    soldProducts = new
+                    {
+                        count = u.ProductsSold.Count(ps => ps.Buyer != null),
+                        products = u.ProductsSold
+                            .Where(p => p.Buyer != null)
+                            .Select(p => new
+                            {
+                                name = p.Name,
+                                price = p.Price
+                            })
+                    }
+                })
+                .ToList();
 
 
+            var finalUsers = new
+            {
+                usersCount = users.Count(),
+                users
+            };
 
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            };
+
+            var usersJason = JsonConvert.SerializeObject(finalUsers, Formatting.Indented, settings);
+
+            return usersJason;
+
+        }
 
     }
 }

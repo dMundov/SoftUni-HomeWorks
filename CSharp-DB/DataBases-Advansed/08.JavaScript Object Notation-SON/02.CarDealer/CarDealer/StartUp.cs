@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using AutoMapper;
 using CarDealer.Data;
+using CarDealer.DTO;
+using CarDealer.DTO.ExportDtos;
 using CarDealer.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+
 
 namespace CarDealer
 {
@@ -14,12 +18,9 @@ namespace CarDealer
     {
         public static void Main(string[] args)
         {
-
-            using (var db = new CarDealerContext())
-            {
-                db.Database.Migrate();
-            }
-
+            
         }
+      
+
     }
 }
